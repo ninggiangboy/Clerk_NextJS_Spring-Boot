@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: clerk-fullstack
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWKS_URL}
+clerk:
+  webhooks:
+    secret: ${WEBHOOK_SECRET}
