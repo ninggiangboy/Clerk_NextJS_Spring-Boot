@@ -1,9 +1,9 @@
-package dev.ngb.auth_app.app.auth_clerk.api
+package dev.ngb.auth_app.app.clerk.api
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import dev.ngb.auth_app.app.auth_clerk.payload.UserCreatedPayload
-import dev.ngb.auth_app.app.auth_clerk.payload.UserDeletedPayload
+import dev.ngb.auth_app.app.clerk.payload.UserCreatedPayload
+import dev.ngb.auth_app.app.clerk.payload.UserDeletedPayload
 import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_CREATE_TYPE
 import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_DELETE_TYPE
 import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_UPDATE_TYPE

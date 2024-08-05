@@ -1,4 +1,4 @@
-package dev.ngb.auth_app.app.auth_clerk.payload
+package dev.ngb.auth_app.app.clerk.payload
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
