@@ -1,4 +1,4 @@
-package dev.ngb.auth_app.config.security
+package dev.ngb.clerk_spring.config.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

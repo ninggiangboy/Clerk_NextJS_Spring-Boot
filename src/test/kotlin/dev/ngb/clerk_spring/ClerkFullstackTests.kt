@@ -1,4 +1,4 @@
-package dev.ngb.auth_app
+package dev.ngb.clerk_spring
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

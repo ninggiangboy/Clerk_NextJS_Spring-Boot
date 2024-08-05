@@ -1,16 +1,16 @@
-package dev.ngb.auth_app.app.clerk.api
+package dev.ngb.clerk_spring.app.clerk.api
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import dev.ngb.auth_app.app.clerk.payload.UserCreatedPayload
-import dev.ngb.auth_app.app.clerk.payload.UserDeletedPayload
-import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_CREATE_TYPE
-import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_DELETE_TYPE
-import dev.ngb.auth_app.constant.CommonConstant.Companion.CLERK_UPDATE_TYPE
+import dev.ngb.clerk_spring.app.clerk.payload.UserCreatedPayload
+import dev.ngb.clerk_spring.app.clerk.payload.UserDeletedPayload
+import dev.ngb.clerk_spring.constant.CommonConstant.ClerkEventType.Companion.CLERK_USER_CREATED
+import dev.ngb.clerk_spring.constant.CommonConstant.ClerkEventType.Companion.CLERK_USER_DELETED
+import dev.ngb.clerk_spring.constant.CommonConstant.ClerkEventType.Companion.CLERK_USER_UPDATED
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import com.svix.kotlin.Webhook
-import dev.ngb.auth_app.config.property.ClerkWebhooksProperties
+import dev.ngb.clerk_spring.config.property.ClerkWebhooksProperties
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestHeader
 import java.net.http.HttpHeaders
@@ -28,17 +28,17 @@ class ClerkResource(private val properties: ClerkWebhooksProperties) : ClerkApi 
             val mapper = jacksonObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             val json = mapper.readTree(payload)
             when (json["type"].asText()) {
-                CLERK_CREATE_TYPE -> {
+                CLERK_USER_CREATED -> {
                     val userCreatedPayload = mapper.readValue(json["data"].traverse(), UserCreatedPayload::class.java)
                     println(userCreatedPayload)
                 }
 
-                CLERK_UPDATE_TYPE -> {
+                CLERK_USER_UPDATED -> {
                     val userUpdatedPayload = mapper.readValue(json["data"].traverse(), UserCreatedPayload::class.java)
                     println(userUpdatedPayload)
                 }
 
-                CLERK_DELETE_TYPE -> {
+                CLERK_USER_DELETED -> {
                     val userDeletedPayload = mapper.readValue(json["data"].traverse(), UserDeletedPayload::class.java)
                     println(userDeletedPayload)
                 }

@@ -1,4 +1,4 @@
-package dev.ngb.auth_app.app.greet.api
+package dev.ngb.clerk_spring.app.greet.api
 
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.RequestMapping

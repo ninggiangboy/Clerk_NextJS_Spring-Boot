@@ -1,8 +1,8 @@
-package dev.ngb.auth_app.app.clerk.payload
+package dev.ngb.clerk_spring.app.clerk.payload
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class UserUpdatedPayload(
+data class UserCreatedPayload(
     @JsonProperty("created_at") val createdAt: Long?,
     @JsonProperty("email_addresses") val emailAddresses: List<EmailAddress?>?,
     @JsonProperty("first_name") val firstName: String?,

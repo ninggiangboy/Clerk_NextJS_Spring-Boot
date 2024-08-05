@@ -1,4 +1,4 @@
-package dev.ngb.auth_app.app.clerk.api
+package dev.ngb.clerk_spring.app.clerk.api
 
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize

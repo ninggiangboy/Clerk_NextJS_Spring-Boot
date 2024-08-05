@@ -1,4 +1,4 @@
-package dev.ngb.auth_app.app.greet.api
+package dev.ngb.clerk_spring.app.greet.api
 
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
 import org.springframework.web.bind.annotation.RestController
