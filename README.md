@@ -9,8 +9,9 @@
 
 - Create Clerk Account and add a new application to get the API Keys (You can go to Developers -> API Keys section to
   retrieve the keys)
-- Setup Webhook URL in Clerk (You can go to Configure -> Webhooks section to add a new webhook URL)
-- You should use Ngrok to expose your local server to the internet to test the webhook URL
+- You should use Ngrok to expose your local server to the internet to test the webhook URL (or use static domain)
+- Setup Webhook URL in Clerk (You can go to Configure -> Webhooks section to add a new webhook URL)  to
+  `https://<domain-from-ngrok>/api/clerk/webhook`
 
 ### Environment Variables
 
