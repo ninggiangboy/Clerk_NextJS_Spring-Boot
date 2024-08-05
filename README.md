@@ -1,5 +1,11 @@
 # Getting Started
 
+- This project is a simple example of how to integrate Clerk with Spring Boot and Next.js
+- The Spring Boot application acts as a resource server
+- The Next.js application acts as a client
+- The Clerk is used for authentication
+- The Clerk Webhooks is used to sync data to the application
+
 ## Structure
 
 - `spring-boot` - Spring Boot application that acts as a resource server
