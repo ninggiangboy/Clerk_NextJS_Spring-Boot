@@ -10,6 +10,7 @@ import dev.ngb.clerk_spring.constant.CommonConstant.ClerkEventType.Companion.CLE
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import com.svix.kotlin.Webhook
+import dev.ngb.clerk_spring.app.clerk.payload.UserUpdatedPayload
 import dev.ngb.clerk_spring.config.property.ClerkWebhooksProperties
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestHeader
@@ -34,7 +35,7 @@ class ClerkResource(private val properties: ClerkWebhooksProperties) : ClerkApi 
                 }
 
                 CLERK_USER_UPDATED -> {
-                    val userUpdatedPayload = mapper.readValue(json["data"].traverse(), UserCreatedPayload::class.java)
+                    val userUpdatedPayload = mapper.readValue(json["data"].traverse(), UserUpdatedPayload::class.java)
                     println(userUpdatedPayload)
                 }
 
